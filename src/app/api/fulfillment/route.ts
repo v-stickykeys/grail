@@ -66,7 +66,7 @@ async function createVote({ userId, amount, bountyNumber }): Promise<boolean> {
       userId,
       amount,
       bounty: {
-        connect: { shadowId: bountyNumber },
+        connect: { shadowId: Number(bountyNumber) },
       },
     },
   });
