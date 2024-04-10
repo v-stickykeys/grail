@@ -15,6 +15,11 @@ Play Next.js SaaS Starter kit includes all the key integrations required to buil
 
 - **PostgreSQL for Database**: Comes with PostgreSQL integration with Prisma which is a powerful and open-source relational database system ensures data integrity and reliability.
 
+For first migration
+```
+npx prisma migrate dev --name init
+```
+
 - **NextAuth for Authentication**: Play Next.js utilizes NextAuth, a versatile solution that provides secure login and user management.
 
 - **MDX for Blogs**: MDX uniquely combines Markdown and JSX, Play Next.js comes with complete blogging solution to create and maintain blog using MDX.

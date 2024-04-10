@@ -1,10 +1,19 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import Logos from "./Logos";
+import { useSearchParams } from "next/navigation";
+import SuccessModal from "../Modal/Success";
+import CreateVoteButton from "../Buttons/CreateVoteButton";
+import CreateIdeaButton from "../Buttons/CreateIdeaButton";
 
 const Hero = () => {
+  const searchParams = useSearchParams();
+  const modal = searchParams.get("modal");
+
   return (
     <>
+      <SuccessModal opened={modal == "success"} />
       <section
         id="home"
         className="relative overflow-hidden bg-primary pt-[120px] md:pt-[130px] lg:pt-[160px]"
@@ -16,15 +25,16 @@ const Hero = () => {
                 className="hero-content wow fadeInUp mx-auto max-w-[780px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="font-display uppercase mb-6 text-6xl leading-snug text-black sm:text-8xl sm:leading-snug lg:text-10xl lg:leading-[1.2]">
-                  Choose your fave <br/> get it made
+                <h1 className="lg:text-10xl mb-6 font-display text-6xl uppercase leading-snug text-black sm:text-8xl sm:leading-snug lg:leading-[1.2]">
+                  Choose your fave <br /> see it made
                 </h1>
                 <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-black sm:text-lg sm:leading-[1.44]">
                   {`
-                  Vote for the app you want to see built. Your vote costs any amount you choose.
-                  The app idea with the most votes gets built in 1 week or less. Everything else gets refunded.
+                  Vote for whatever you want to see built. Your vote costs any amount you choose.
+                  If the idea doesn't get built by the time limit all votes are refunded.
                   `}
                 </p>
+                <CreateIdeaButton />
                 {/* <ul className="mb-10 flex flex-wrap items-center justify-center gap-5">
                   <li>
                     <Link
@@ -60,7 +70,7 @@ const Hero = () => {
                     </Link>
                   </li>
                 </ul> */}
-{/* <Logos /> */}
+                {/* <Logos /> */}
               </div>
             </div>
 
@@ -70,13 +80,13 @@ const Hero = () => {
                 data-wow-delay=".25s"
               >
                 <div className="mt-16">
-                  <Image
+                  {/* <Image
                     src="/images/hero/hero-image.png"
                     alt="hero"
-                    className="mx-auto max-w-fill rounded-t-xl rounded-tr-xl"
+                    className="max-w-fill mx-auto rounded-t-xl rounded-tr-xl"
                     width={600}
                     height={316}
-                  />
+                  /> */}
                 </div>
                 <div className="absolute -left-9 bottom-0 z-[-1]">
                   <svg

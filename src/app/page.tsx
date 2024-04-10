@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import HomeBlogSection from "@/components/Blog/HomeBlogSection";
+import Bounties from "@/components/Bounties";
 import CallToAction from "@/components/CallToAction";
 import Clients from "@/components/Clients";
 import ScrollUp from "@/components/Common/ScrollUp";
@@ -15,8 +16,8 @@ import { getAllPosts } from "@/utils/markdown";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Grail - Let your audience grow with you",
-  description: "Grail lets your audience grow with you. With your personal Grail page you can show your progress on your goals with real-time stats. Grow your followers and fans with email updates on your journey.",
+  title: "Grail - Choose your fave. See it made.",
+  description: "Grail lets vote on things you want to see built.",
 };
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
       <Hero />
       {/* <Features />
       <About /> */}
+      <Bounties />
       <CallToAction />
       {/* <Pricing />
       <Testimonials />
