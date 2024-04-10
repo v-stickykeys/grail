@@ -43,6 +43,18 @@ const Header = () => {
 
   const { theme, setTheme } = useTheme();
 
+//   return (
+//     <div style={{width: '100%', height: '100%', paddingTop: 48, paddingBottom: 16, paddingLeft: 160, paddingRight: 160, background: '#F8F5F0', justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex'}}>
+//     <div style={{justifyContent: 'flex-start', alignItems: 'center', gap: 8, display: 'flex'}}>
+//         <img style={{width: 30.14, height: 32}} src="https://via.placeholder.com/30x32" />
+//         <div style={{color: '#1F392C', fontSize: 24, fontFamily: 'Kulim Park', fontWeight: '700', lineHeight: 24, wordWrap: 'break-word'}}>Grail</div>
+//     </div>
+//     <div style={{paddingLeft: 32, paddingRight: 32, paddingTop: 12, paddingBottom: 12, background: '#60C6FF', borderRadius: 100, justifyContent: 'center', alignItems: 'center', gap: 10, display: 'flex'}}>
+//         <div style={{textAlign: 'center', color: '#1F392C', fontSize: 18, fontFamily: 'Inter', fontWeight: '600', lineHeight: 24, letterSpacing: 0.18, wordWrap: 'break-word'}}>Get Started</div>
+//     </div>
+// </div>
+//   )
+
   return (
     <>
       <header
@@ -64,14 +76,14 @@ const Header = () => {
                 {pathUrl !== "/" ? (
                   <>
                     <Image
-                      src={`/images/logo/logo.svg`}
+                      src={`/images/logo/logo-color.svg`}
                       alt="logo"
                       width={140}
                       height={30}
                       className="header-logo w-full dark:hidden"
                     />
                     <Image
-                      src={`/images/logo/logo-white.svg`}
+                      src={`/images/logo/logo-color.svg`}
                       alt="logo"
                       width={140}
                       height={30}
@@ -83,8 +95,8 @@ const Header = () => {
                     <Image
                       src={`${
                         sticky
-                          ? "/images/logo/logo.svg"
-                          : "/images/logo/logo-white.svg"
+                          ? "/images/logo/logo-color.svg"
+                          : "/images/logo/logo-black.svg"
                       }`}
                       alt="logo"
                       width={140}
@@ -92,7 +104,7 @@ const Header = () => {
                       className="header-logo w-full dark:hidden"
                     />
                     <Image
-                      src={"/images/logo/logo-white.svg"}
+                      src={"/images/logo/logo-color.svg"}
                       alt="logo"
                       width={140}
                       height={30}
@@ -262,7 +274,7 @@ const Header = () => {
               </div>
               <div className="hidden items-center justify-end pr-16 sm:flex lg:pr-0">
                 {/* theme toggler */}
-                <button
+                {/* <button
                   aria-label="theme toggler"
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                   className="flex h-8 w-8 items-center justify-center text-body-color duration-300 dark:text-white"
@@ -286,9 +298,9 @@ const Header = () => {
                       </g>
                     </svg>
                   </span>
-                </button>
+                </button> */}
 
-                {session?.user ? (
+                {/* {session?.user ? (
                   <>
                     <p
                       className={`loginBtn px-7 py-3 text-base font-medium ${
@@ -354,7 +366,7 @@ const Header = () => {
                       </>
                     )}
                   </>
-                )}
+                )} */}
               </div>
             </div>
           </div>

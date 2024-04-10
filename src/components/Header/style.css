@@ -1,0 +1,64 @@
+.header {
+  align-items: center;
+  background-color: #f8f5f0;
+  display: flex;
+  justify-content: space-between;
+  padding: 48px 160px 16px;
+  position: relative;
+  width: 1512px;
+}
+
+.header .logo {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  position: relative;
+}
+
+.header .symbol-basic-black {
+  height: 32px;
+  object-fit: cover;
+  position: relative;
+  width: 30.14px;
+}
+
+.header .text-wrapper {
+  color: #1f392c;
+  font-family: "Kulim Park-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .button {
+  all: unset;
+  align-items: center;
+  background-color: #5fc5ff;
+  border-radius: 100px;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  padding: 12px 32px;
+  position: relative;
+}
+
+.header .label {
+  color: #1f392c;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.18px;
+  line-height: 24px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}

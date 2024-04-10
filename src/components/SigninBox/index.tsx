@@ -10,7 +10,7 @@ const SigninBox = ({ children }) => {
       <div className="mb-10 text-center">
         <Link href="/#" className="mx-auto inline-block max-w-[160px]">
           <Image
-            src="/images/logo/logo.svg"
+            src="/images/logo/logo-color.svg"
             alt="logo"
             width={157}
             height={56}

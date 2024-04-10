@@ -1,0 +1,112 @@
+.content {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  position: relative;
+}
+
+.content .line {
+  height: 129px;
+  left: -34px;
+  position: absolute;
+  top: 119px;
+  width: 558px;
+}
+
+.content .slogan {
+  color: #1f392c;
+  font-family: "Archivo-Regular", Helvetica;
+  font-size: 112px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 112px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  width: 977px;
+}
+
+.content .description {
+  color: #1f392c;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 32px;
+  position: relative;
+  text-align: center;
+  width: 773px;
+}
+
+.content .input {
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 100px;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 4px;
+  padding: 8px 0px 8px 16px;
+  position: relative;
+  width: 567px;
+}
+
+.content .div {
+  align-items: baseline;
+  align-self: stretch;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 0px 8px 0px 24px;
+  position: relative;
+}
+
+.content .supporting-text {
+  color: transparent;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.content .text-wrapper {
+  color: #000000;
+}
+
+.content .span {
+  color: #d4d4d4;
+}
+
+.content .button {
+  all: unset;
+  align-items: center;
+  background-color: #5fc5ff;
+  border-radius: 24px;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  padding: 12px 32px;
+  position: relative;
+}
+
+.content .label {
+  color: #1f392c;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.18px;
+  line-height: 24px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}

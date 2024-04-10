@@ -8,12 +8,12 @@ const Features = () => {
       <div className="container">
         <SectionTitle
           subtitle="Features"
-          title="Main Features Of Play"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Grail lets you track and share data in seconds"
+          paragraph="With a customizable Grail page, you can choose what data you want to track, easily add updates, and share the link to your page so anyone can view your data updating in real-time."
         />
 
         <div className="-mx-4 mt-12 flex flex-wrap lg:mt-20">
-          {featuresData.map((feature) => (
+          {featuresData.sort((a, b) => a.id - b.id ).map((feature) => (
             <SingleFeature key={feature.id} feature={feature} />
           ))}
         </div>

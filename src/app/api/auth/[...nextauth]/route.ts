@@ -1,76 +1,25 @@
-import bcrypt from "bcrypt";
-import NextAuth, { DefaultSession, type NextAuthOptions } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
-import GitHubProvider from "next-auth/providers/github";
-import GoogleProvider from "next-auth/providers/google";
+import NextAuth, { type NextAuthOptions } from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import { PrismaClient } from "@prisma/client";
+// import { PrismaClient } from "@prisma/client";
+// import EmailProvider from 'next-auth/providers/email';
  
- const client = new PrismaClient();
+// const client = new PrismaClient();
 
 export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/auth/signin",
   },
-  adapter: PrismaAdapter(client),
+  // adapter: PrismaAdapter(client),
   secret: process.env.SECRET,
   session: {
     strategy: "jwt",
   },
 
   providers: [
-    CredentialsProvider({
-      name: "credentials",
-      credentials: {
-        email: { label: "Email", type: "text", placeholder: "Jhondoe" },
-        password: { label: "Password", type: "password" },
-        username: { label: "Username", type: "text", placeholder: "Jhon Doe" },
-      },
-
-      async authorize(credentials) {
-        // check to see if eamil and password is there
-        if (!credentials?.email || !credentials?.password) {
-          throw new Error("Please enter an email or password");
-        }
-
-        // check to see if user already exist
-        const user = await client.user.findUnique({
-          where: {
-            email: credentials.email,
-          },
-        });
-
-        // if user was not found
-        if (!user || !user?.password) {
-          throw new Error("No user found");
-        }
-
-        // check to see if passwords match
-        const passwordMatch = await bcrypt.compare(
-          credentials.password,
-          user.password,
-        );
-
-        // console.log(passwordMatch);
-
-        if (!passwordMatch) {
-          console.log("test", passwordMatch);
-          throw new Error("Incorrect password");
-        }
-
-        return user;
-      },
-    }),
-
-    GitHubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    }),
-
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
+    // EmailProvider({
+    //   server: process.env.MAIL_SERVER,
+    //   from: 'NextAuth.js <no-reply@example.com>'
+    // }),
   ],
 
   callbacks: {

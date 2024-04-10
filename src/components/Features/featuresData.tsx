@@ -17,13 +17,13 @@ const featuresData: Feature[] = [
         />
       </svg>
     ),
-    title: "Free and Open-Source",
-    paragraph: "Lorem Ipsum is simply dummy text of the printing and industry.",
+    title: "Create and Customize",
+    paragraph: "Add your stats and goals to a personalized page.",
     btn: "Learn More",
     btnLink: "/#",
   },
   {
-    id: 2,
+    id: 3,
     icon: (
       <svg
         width="36"
@@ -38,13 +38,13 @@ const featuresData: Feature[] = [
         />
       </svg>
     ),
-    title: "Modern Design",
-    paragraph: "Lorem Ipsum is simply dummy text of the printing and industry.",
+    title: "Share Your Progress",
+    paragraph: "Share your custom link to show your stats in real-time.",
     btn: "Learn More",
     btnLink: "/#",
   },
   {
-    id: 3,
+    id: 2,
     icon: (
       <svg
         width="37"
@@ -91,8 +91,8 @@ const featuresData: Feature[] = [
         />
       </svg>
     ),
-    title: "SaaS Starter Kit",
-    paragraph: "Lorem Ipsum is simply dummy text of the printing and industry.",
+    title: "Analyze Your Data",
+    paragraph: "Use graphs and counters to understand your progress.",
     btn: "Learn More",
     btnLink: "/#",
   },
@@ -124,8 +124,8 @@ const featuresData: Feature[] = [
         />
       </svg>
     ),
-    title: "All Essential Integrations",
-    paragraph: "Lorem Ipsum is simply dummy text of the printing and industry.",
+    title: "Grow Your Audience",
+    paragraph: "Collect emails to notify your followers about milestones.",
     btn: "Learn More",
     btnLink: "/#",
   },
