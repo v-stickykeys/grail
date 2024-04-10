@@ -1,6 +1,15 @@
-import bcrypt from "bcrypt";
 import { NextResponse } from "next/server";
 import { prisma } from "@/utils/prismaDB";
+
+// Notice the funciton definiton:
+export async function GET(req) {
+  return NextResponse.json(
+    { error: "Method not allowed" },
+    {
+      status: 405
+    }
+  );
+}
 
 export async function POST(request: any) {
   const body = await request.json();
