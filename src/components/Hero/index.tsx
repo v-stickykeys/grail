@@ -30,9 +30,10 @@ const Hero = () => {
                 </h1>
                 <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-black sm:text-lg sm:leading-[1.44]">
                   {`
-                  Vote for whatever you want to see built. Your vote costs any amount you choose.
-                  If the idea doesn't get built by the time limit all votes are refunded.
+                  Vote for whatever you want to see built. Your vote costs any amount you choose and the builder receives the proceeds!
                   `}
+                  <br />
+                  <br />
                 </p>
                 <CreateIdeaButton />
                 {/* <ul className="mb-10 flex flex-wrap items-center justify-center gap-5">

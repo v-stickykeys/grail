@@ -54,7 +54,9 @@ const Bounties = () => {
             return <SingleBounty key={bounty.id} bounty={singleBounty} />;
           })}
         </div>
+                  {`If an idea doesn't get built within 24 hours, all votes are refunded.`}
       </div>
+
     </section>
   );
 };
