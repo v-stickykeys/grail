@@ -1,11 +1,11 @@
 import { buffer } from "micro";
-import { STRIPE_ENDPOINT_SECRET, STRIPE_SECRET_KEY } from "@/app/env";
+import { STRIPE_ENDPOINT_SECRET } from "@/app/env";
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { prisma } from "@/utils/prismaDB";
 
 export async function POST(request: NextRequest) {
-  const stripe = new Stripe(STRIPE_SECRET_KEY, {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
     apiVersion: "2023-10-16",
   });
   const payload = await request.text();
@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     event = stripe.webhooks.constructEvent(
       payload,
       sig,
-      STRIPE_ENDPOINT_SECRET,
+      process.env.STRIPE_ENDPOINT_SECRET,
     );
   } catch (err) {
     console.log(err);

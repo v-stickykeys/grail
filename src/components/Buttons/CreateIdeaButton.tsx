@@ -3,7 +3,7 @@ export default function CreateIdeaButton() {
   function handleClick() {
     fetch("/api/payment", {
       method: "POST",
-      body: JSON.stringify({}),
+      body: JSON.stringify({ bountyNumber: undefined }),
     }).then(async (resp) => {
       const data = await resp.json();
       window.location = data.message;

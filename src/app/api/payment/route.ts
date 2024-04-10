@@ -1,4 +1,4 @@
-import { HOST, STRIPE_SECRET_KEY } from "@/app/env";
+import { HOST } from "@/app/env";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
@@ -6,7 +6,7 @@ const PRICE_ID = "price_1P3xC2CT0kVaBZHZXzAdjeGT"; // customer chooses ODF21
 // const PRICE_ID = "price_1P3ygDCT0kVaBZHZRtAGMbLq"; // test
 
 export async function POST(request) {
-  const stripe = new Stripe(STRIPE_SECRET_KEY, {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
     apiVersion: "2023-10-16",
   });
   const data = await request.json();
