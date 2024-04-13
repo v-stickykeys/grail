@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { EmbedBuilder, WebhookClient } from 'discord.js';
 import { prisma } from "@/utils/prismaDB";
 
 export async function GET() {
@@ -17,20 +16,12 @@ export async function GET() {
   });
 
   if (orders.length > 0) {
-    const webhookClient = new WebhookClient({
-      id: "1228392626689146910",
-      token: "p46d3a2mvwRIkc5cwPUgOWaYPi6KB8wEfXN934DAQP5h5PsOYt9an0H948RmYBnEqFVt"
-    });
-
-    const embed = new EmbedBuilder()
-      .setTitle('Order up!')
-      .setColor(0x00FFFF);
-
-    await webhookClient.send({
-      content: 'Time to order a pizza',
-      username: 'bitcoin-pizza-bot',
-      avatarURL: 'https://i.imgur.com/AfFp7pu.png',
-      embeds: [embed],
+    const resp = await fetch("https://discord.com/api/webhooks/1228392626689146910/p46d3a2mvwRIkc5cwPUgOWaYPi6KB8wEfXN934DAQP5h5PsOYt9an0H948RmYBnEqFVt", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ content: "Order up!" })
     });
   }
 
