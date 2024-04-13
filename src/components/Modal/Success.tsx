@@ -2,7 +2,7 @@ import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 
-export default function SuccessModal({ opened }) {
+export default function SuccessModal({ opened, text }) {
   const [open, setOpen] = useState(opened)
 
   const cancelButtonRef = useRef(null)
@@ -41,7 +41,7 @@ export default function SuccessModal({ opened }) {
                       </Dialog.Title>
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
-                          Your vote has been cast. Now check out the standings.
+                          {text}
                         </p>
                       </div>
                   </div>

@@ -41,5 +41,10 @@ export async function POST(request: any) {
     return NextResponse.json({ data: votes });
   }
 
+  if (body.type == "getPizzaOrders") {
+    const orders = await prisma.pizzaOrder.findMany();
+    return NextResponse.json({ data: orders });
+  }
+
   return NextResponse.json({ message: "Invalid"}, { status: 400 });
 }

@@ -268,7 +268,9 @@ const SingleBounty = ({ bounty }: { bounty: BountyType }) => {
         </div> */}
         <div className="text-left">
           <h3 className="mb-1 text-lg font-semibold text-light dark:text-white">
+            <a href={`/${listNumber}`}>
             #{listNumber} {title}
+            </a>
           </h3>
           <p className="mb-5 text-sm text-light dark:text-light-6">
             Total: ${total/100}

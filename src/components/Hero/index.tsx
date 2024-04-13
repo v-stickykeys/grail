@@ -13,7 +13,7 @@ const Hero = () => {
 
   return (
     <>
-      <SuccessModal opened={modal == "success"} />
+      <SuccessModal text="Your vote has been cast. Now check out the standings." opened={modal == "success"} />
       <section
         id="home"
         className="relative overflow-hidden bg-primary pt-[120px] md:pt-[130px] lg:pt-[160px]"

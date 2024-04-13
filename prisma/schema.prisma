@@ -80,3 +80,13 @@ model Vote {
   bountyId  String
   bounty    Bounty @relation(fields: [bountyId], references: [id])
 }
+
+model PizzaOrder {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  paymentId String?
+  userId    String
+  threshold Int
+  sent      Boolean
+}

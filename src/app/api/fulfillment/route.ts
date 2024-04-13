@@ -27,8 +27,19 @@ export async function POST(request: NextRequest) {
     const customFields = event.data.object["custom_fields"] as Array<{[k: string]: any}>;
     const amount = event.data.object["amount_subtotal"];
     const bountyNumber = event.data.object["metadata"]["bounty"];
+    const bitcoinPizza = event.data.object["metadata"]["btcPizza"];
 
-    console.log(customFields)
+    if (bitcoinPizza) {
+      await createBitcoinPizzaOrder({
+        userId: customFields.find((field) => {
+          return field.key == "twitter"
+        }).text.value,
+        threshold: customFields.find((field) => {
+          return field.key == "threshold"
+        }).numeric.value,
+      })
+      return NextResponse.json({ message: "OK" });
+    }
 
     if (bountyNumber == undefined) {
       // creating a new bounty
@@ -57,7 +68,19 @@ export async function POST(request: NextRequest) {
     }
     return NextResponse.json({ message: "OK" });
   }
-  return NextResponse.json({ message: "Unsupported type" }, { status: 400 });
+  return NextResponse.json({ message: "Unsupported type" });
+}
+
+async function createBitcoinPizzaOrder({ userId, threshold }): Promise<boolean> {
+  console.log("creating order")
+  await prisma.pizzaOrder.create({
+    data: {
+      userId,
+      threshold: Number(threshold),
+      sent: false
+    },
+  });
+  return true;
 }
 
 async function createVote({ userId, amount, bountyNumber }): Promise<boolean> {
