@@ -33,7 +33,7 @@ const AboutPage = () => {
             <div className="w-full px-4 lg:w-1/2">
               <div className="mb-12 max-w-[540px] lg:mb-0">
                 <h2 className="mb-5 text-3xl font-bold leading-tight text-dark dark:text-white sm:text-[40px] sm:leading-[1.2]">
-                  Get a pizza delivered when Bitcoin hits a certain price
+                Deliver me a pizza every time bitcoin goes above a certain price.
                 </h2>
                 <p className="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6">
                   This idea proposed by <a href={`https://x.com/themisbahkhan`} target="_blank">@themisbahkhan</a> collected $9.50 dollars from 3 voters
