@@ -51,7 +51,7 @@ const Bounties = () => {
                 dateStyle: "medium",
               }).format(new Date(bounty.createdAt)),
             };
-            return <SingleBounty key={bounty.id} bounty={singleBounty} />;
+            return <SingleBounty key={bounty.id} bounty={singleBounty} built={bounty.total && true} />;
           })}
         </div>
                   {`If an idea doesn't get built within 24 hours, all votes are refunded.`}
