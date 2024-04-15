@@ -36,7 +36,7 @@ const AboutPage = () => {
                   Get a pizza delivered when Bitcoin hits a certain price
                 </h2>
                 <p className="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6">
-                  This idea proposed by Misbah collected $9.50 dollars from 5 voters
+                  This idea proposed by <a href={`https://x.com/themisbahkhan`} target="_blank">@themisbahkhan</a> collected $9.50 dollars from 3 voters
                   <br /> <br />
                 </p>
 
